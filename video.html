@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Spesial 💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hearts-container"></div>
+    <div class="stars-container"></div>
+    
+    <div class="container">
+        <div class="video-section">
+            <h2 class="section-title">Lagu Kesukaan Mu 💖</h2>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <div class="audio-player-container">
+                        <div class="audio-visualizer">
+                            <div class="visualizer-bar"></div>
+                            <div class="visualizer-bar"></div>
+                            <div class="visualizer-bar"></div>
+                            <div class="visualizer-bar"></div>
+                            <div class="visualizer-bar"></div>
+                        </div>
+                        <audio id="audioPlayer" controls style="display: none;">
+                            <source src="audio/The 1975 - About You (Official).mp3" type="audio/mpeg">
+                            Browser Anda tidak mendukung audio player.
+                        </audio>
+                        <div class="custom-audio-controls">
+                            <button class="play-pause-btn" id="playPauseBtn">
+                                <span class="play-icon">▶</span>
+                                <span class="pause-icon" style="display: none;">⏸</span>
+                            </button>
+                            <div class="audio-info">
+                                <div class="audio-title">Lagu Kesukaan Mu 💖</div>
+                                <div class="audio-time">
+                                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                                </div>
+                            </div>
+                            <div class="audio-progress-container">
+                                <input type="range" id="progressBar" class="progress-bar" min="0" max="100" value="0">
+                            </div>
+                            <div class="audio-controls-row">
+                                <input type="range" id="volumeControl" class="volume-control" min="0" max="100" value="70">
+                                <span class="volume-icon">🔊</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="next-button" onclick="goToMessagePage()">
+                <span>Lanjutkan 💝</span>
+                <span class="heart-icon">→</span>
+            </button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

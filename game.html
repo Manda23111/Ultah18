@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Kecil 🎮</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hearts-container"></div>
+    <div class="stars-container"></div>
+    
+    <div class="container">
+        <div class="game-section">
+            <h2 class="section-title">Zona Permainan 🎮</h2>
+            
+            <div class="game-selector">
+                <button class="game-tab active" onclick="switchGame('heart')" data-game="heart">Cari Hati 💖</button>
+                <button class="game-tab" onclick="switchGame('quiz')" data-game="quiz">Kuis Cinta 💕</button>
+                <button class="game-tab" onclick="switchGame('memory')" data-game="memory">Memory Game 🧠</button>
+            </div>
+            
+            <!-- Game 1: Cari Hati -->
+            <div id="heartGame" class="game-content active">
+                <p class="game-instruction">Klik semua hati yang muncul! Semakin banyak semakin baik! 🎯</p>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">Skor:</span>
+                        <span id="score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Waktu:</span>
+                        <span id="timer" class="stat-value">30</span>
+                    </div>
+                </div>
+                
+                <div class="game-area" id="gameArea">
+                    <p class="start-message">Klik tombol di bawah untuk mulai! 🎮</p>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="game-button" id="startButton" onclick="startGame()">Mulai Game 🚀</button>
+                    <button class="game-button" id="resetButton" onclick="resetGame()" style="display:none;">Main Lagi 🔄</button>
+                </div>
+                
+                <div class="final-message" id="finalMessage" style="display:none;">
+                    <h3>🎉 Selamat! 🎉</h3>
+                    <p id="finalScore"></p>
+                </div>
+            </div>
+            
+            <!-- Game 2: Kuis -->
+            <div id="quizGame" class="game-content" style="display:none;">
+                <p class="game-instruction">Jawab pertanyaan dengan benar! 💭</p>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">Skor:</span>
+                        <span id="quizScore" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Pertanyaan:</span>
+                        <span id="questionNum" class="stat-value">1/5</span>
+                    </div>
+                </div>
+                
+                <div class="quiz-container" id="quizContainer">
+                    <div class="question-box" id="questionBox">
+                        <h3 id="questionText">Siap untuk mulai?</h3>
+                        <div class="answers" id="answers"></div>
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button class="game-button" id="startQuizButton" onclick="startQuiz()">Mulai Kuis 🎯</button>
+                    <button class="game-button" id="resetQuizButton" onclick="resetQuiz()" style="display:none;">Main Lagi 🔄</button>
+                </div>
+                
+                <div class="final-message" id="quizFinalMessage" style="display:none;">
+                    <h3>🎉 Selesai! 🎉</h3>
+                    <p id="quizFinalScore"></p>
+                </div>
+            </div>
+            
+            <!-- Game 3: Memory -->
+            <div id="memoryGame" class="game-content" style="display:none;">
+                <p class="game-instruction">Temukan pasangan yang cocok! Ingat posisinya! 🧩</p>
+                
+                <div class="game-stats">
+                    <div class="stat">
+                        <span class="stat-label">Percobaan:</span>
+                        <span id="memoryMoves" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Pasangan:</span>
+                        <span id="memoryPairs" class="stat-value">0/6</span>
+                    </div>
+                </div>
+                
+                <div class="memory-board" id="memoryBoard"></div>
+                
+                <div class="game-controls">
+                    <button class="game-button" id="startMemoryButton" onclick="startMemoryGame()">Mulai Game 🎲</button>
+                    <button class="game-button" id="resetMemoryButton" onclick="resetMemoryGame()" style="display:none;">Main Lagi 🔄</button>
+                </div>
+                
+                <div class="final-message" id="memoryFinalMessage" style="display:none;">
+                    <h3>🎉 Menang! 🎉</h3>
+                    <p id="memoryFinalScore"></p>
+                </div>
+            </div>
+            
+            <button class="back-button" onclick="goToHome()">
+                <span>🏠 Kembali ke Awal</span>
+            </button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
